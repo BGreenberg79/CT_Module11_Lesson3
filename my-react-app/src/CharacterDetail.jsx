@@ -18,7 +18,7 @@ const CharacterDetail = ({selectedCharacter}) => {
                 
                 const response = await axios.get(apiMarvelURL);
                 console.log(response);
-                setDetailCharacter(response.data.data.results);
+                setDetailCharacter(response.data.data.results[0]);
             } catch (error) {console.error('Error retrieveing characters', error);
             }
         }    
@@ -30,9 +30,35 @@ const CharacterDetail = ({selectedCharacter}) => {
         <div>
             <h2>Character Details</h2>
             <ul>
+                <h5>{detailCharacter.name}</h5>
+                <h5>Series</h5>
                 {
                     detailCharacter && detailCharacter.series && (
                        detailCharacter.series.items.map((item)=>(
+                        <p>{item.name}</p>
+                       ))
+                    )
+                }
+                <h5>Stories</h5>
+                {
+                    detailCharacter && detailCharacter.stories && (
+                       detailCharacter.stories.items.map((item)=>(
+                        <p>{item.name}</p>
+                       ))
+                    )
+                }
+                <h5>Comics</h5>
+                {
+                    detailCharacter && detailCharacter.comics && (
+                       detailCharacter.comics.items.map((item)=>(
+                        <p>{item.name}</p>
+                       ))
+                    )
+                }
+                <h5>Events</h5>
+                {
+                    detailCharacter && detailCharacter.events && (
+                       detailCharacter.events.items.map((item)=>(
                         <p>{item.name}</p>
                        ))
                     )
