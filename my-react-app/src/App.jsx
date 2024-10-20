@@ -3,6 +3,8 @@ import axios from "axios";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 
+// Task 4 Integrate components and update user interface
+
 function App() {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
 
