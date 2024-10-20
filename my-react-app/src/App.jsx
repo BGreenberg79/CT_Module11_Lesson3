@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import characterList from "./CharacterList";
+import CharacterList from "./CharacterList";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -26,7 +26,7 @@ function App() {
   return (
     <div>
       <h1>Marvel API</h1>
-      <characterList 
+      <CharacterList 
        characters= {characters}
       />
     </div>
