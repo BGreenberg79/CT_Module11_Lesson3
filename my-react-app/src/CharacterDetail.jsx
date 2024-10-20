@@ -27,7 +27,7 @@ const CharacterDetail = ({selectedCharacter}) => {
 
     return (
         <div>
-            <h2>Characters</h2>
+            <h2>Character Details</h2>
             <ul>
                 {
                     detailCharacter && (
