@@ -8,7 +8,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const CharacterList = () => {
+const CharacterList = ({onSelectedCharacter}) => {
     const [fetchedCharacters, setFetchedCharacters] = useState([]);
 
     let ts = "1728768095246";
@@ -35,7 +35,7 @@ const CharacterList = () => {
                 {fetchedCharacters.map((character)=>(
                     <li key={character.id}>
                         Name: {character.name} <br />
-                        <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} />
+                        <img onClick={()=>onSelectedCharacter(character)} src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} />
                     </li>
                 ))}
             </ul>
